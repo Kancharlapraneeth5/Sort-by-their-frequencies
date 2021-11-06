@@ -1,0 +1,20 @@
+def get_key(val):
+    for key, value in dict.items():
+         if val == value:
+             return key
+             
+l=[eval(x) for x in input().split()]
+r=[]
+dict={}
+for i in range(max(l)+1):
+    if i not in l:
+        continue
+    else:
+        dict[i]=l.count(i)
+print(dict)
+for i in sorted(dict.values()):
+    re=get_key(i)
+    for j in range(i):
+        r.append(re)  
+    dict[re]=0
+print(r[::-1])
